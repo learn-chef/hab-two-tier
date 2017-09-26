@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Content-type: text/plain; charset=iso-8859-1"
+echo ""
+
+#echo "Hello {{cfg.webapp.name}}!!"
+echo "Hello World!!"
+echo "Time is: $(date)"
+echo "Docker id: $(cat /proc/self/cgroup|head -1|awk -F "/" '{print $3}')"
