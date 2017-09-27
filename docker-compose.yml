@@ -1,16 +1,19 @@
-version: '3'
-services:
-  webapp-1:
-    image: cheftraining/webapp
-  webapp-2:
-    image: cheftraining/webapp
-    command: --peer webapp-1
-    links:
-      - webapp-1
-  lb-1:
-    image: cheftraining/haproxy
-    command: --peer webapp-2 --bind backend:webapp.default
-    links:
-      - webapp-2
-    ports:
-      - "8002:80"
+  version: '3'
+  services:
+    webapp-1:
+      image: cheftraining/webapp
+      hostname: "web1"
+    webapp-2:
+      image: cheftraining/webapp
+      hostname: "web2"
+      command: --peer webapp-1
+      links:
+        - webapp-1
+    lb-1:
+      image: cheftraining/haproxy
+      hostname: "lb"
+      command: --peer webapp-2 --bind backend:webapp.default
+      links:
+        - webapp-2
+      ports:
+        - "8002:80"
