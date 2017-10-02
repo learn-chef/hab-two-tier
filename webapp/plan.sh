@@ -1,4 +1,4 @@
-pkg_origin=learnchef
+pkg_origin=learn-chef
 pkg_name=webapp
 pkg_version="0.2.0"
 pkg_maintainer="The Chef Training Team <training@chef.io>"
