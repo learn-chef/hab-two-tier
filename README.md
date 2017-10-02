@@ -1,33 +1,34 @@
-# Balance
+# hab-two-tier
 
-This example habitat application that takes a simple web application (webapp) and a load balancer (haproxy). Two webapps are launched and then bound to the haproxy through the backend binding.
+This Habitat project illustrates a basic Apache web application (`webapp`) and HAProxy load balancer (`haproxy`).
 
-## Build
+The Docker Compose file brings up HAProxy and two load-balanced webapp instances.
 
-    $ hab pkg build webapp
-    $ hab pkg export docker learnchef/webapp
-    $ hab pkg build haproxy
-    $ hab pkg export docker learnchef/haproxy
+## Build the packages
 
-### Within the Studio
+```
+$ hab pkg build webapp
+$ hab pkg export docker learn-chef/webapp
+$ hab pkg build haproxy
+$ hab pkg export docker learn-chef/haproxy
+```
 
-    $ hab studio enter
-    $ cd webapp
-    $ build
-    $ hab pkg export docker learnchef/webapp
-    $ cd ../haproxy
-    $ build
-    $ hab pkg export docker learnchef/haproxy
+## Export to Docker
+
+```
+$ hab studio enter
+$ cd webapp
+$ build
+$ hab pkg export docker learn-chef/webapp
+$ cd ../haproxy
+$ build
+$ hab pkg export docker learn-chef/haproxy
+```
 
 ## Run
 
-    $ docker-compose up
-
-To verify that each web server is working:
-
-    $ curl localhost:8000/cgi-bin/hello-world
-    $ curl localhost:8001/cgi-bin/hello-world
-
-To verify that the load balancer is working:
-
-    $ curl localhost:8002/cgi-bin/hello-world
+```
+$ docker-compose up -d
+$ curl localhost:8000/cgi-bin/hello-world
+$ docker-compose down
+```
