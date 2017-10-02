@@ -5,19 +5,19 @@ This example habitat application that takes a simple web application (webapp) an
 ## Build
 
     $ hab pkg build webapp
-    $ hab pkg export docker cheftraining/webapp
+    $ hab pkg export docker learnchef/webapp
     $ hab pkg build haproxy
-    $ hab pkg export docker cheftraining/haproxy
+    $ hab pkg export docker learnchef/haproxy
 
 ### Within the Studio
 
     $ hab studio enter
     $ cd webapp
     $ build
-    $ hab pkg export docker cheftraining/webapp
+    $ hab pkg export docker learnchef/webapp
     $ cd ../haproxy
     $ build
-    $ hab pkg export docker cheftraining/haproxy
+    $ hab pkg export docker learnchef/haproxy
 
 ## Run
 

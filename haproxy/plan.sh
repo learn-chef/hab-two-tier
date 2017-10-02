@@ -1,8 +1,8 @@
-pkg_origin=cheftraining
+pkg_origin=learnchef
 pkg_name=haproxy
 pkg_description="The Reliable, High Performance TCP/HTTP Load Balancer"
 pkg_version=1.6.11
-pkg_maintainer="Chef Training <training@chef.io>"
+pkg_maintainer="LearnChef <learnchef@chef.io>"
 pkg_license=('GPL-2.0' 'LGPL-2.1')
 pkg_svc_run="haproxy -f $pkg_svc_config_path/haproxy.conf -db"
 pkg_svc_user="root"
