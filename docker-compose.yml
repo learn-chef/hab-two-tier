@@ -1,12 +1,12 @@
 version: '3'
 services:
   web-1:
-    image: learn-chef/webapp
+    image: test/webapp
   web-2:
-    image: learn-chef/webapp
+    image: test/webapp
     command: --peer web-1
   load-balancer:
-    image: learn-chef/haproxy
+    image: test/haproxy
     command: --peer web-2
              --bind backend:webapp.default
     ports:
