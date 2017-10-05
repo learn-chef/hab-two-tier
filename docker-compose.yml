@@ -1,12 +1,12 @@
 version: '3'
 services:
   web-1:
-    image: test/webapp
+    image: $HAB_ORIGIN/webapp
   web-2:
-    image: test/webapp
+    image: $HAB_ORIGIN/webapp
     command: --peer web-1
   load-balancer:
-    image: test/haproxy
+    image: $HAB_ORIGIN/haproxy
     command: --peer web-2
              --bind backend:webapp.default
     ports:
