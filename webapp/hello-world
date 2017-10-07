@@ -22,8 +22,7 @@ echo "<div class='bubble' style='position: absolute; left: 83px; top: 19px; widt
 echo "<strong style='font-size: 24px;'>Hi, I'm Habby!</strong>"
 
 echo "<div style='padding-top: 10px;'>"
-echo "The time is <strong>$(date '+%H:%M:%S')</strong> and I live at"
-echo "<strong>$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')<strong>."
+echo "The time is <strong>$(date '+%H:%M:%S')</strong> and I live at <strong>$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')</strong>."
 echo "</div>"
 
 echo "</div>" # bubble
