@@ -4,25 +4,28 @@ This Habitat project illustrates a basic Apache web application (`webapp`) and H
 
 The Docker Compose file brings up HAProxy and two load-balanced webapp instances.
 
-## Build the packages
-
-```
-$ hab pkg build webapp
-$ hab pkg export docker learn-chef/webapp
-$ hab pkg build haproxy
-$ hab pkg export docker learn-chef/haproxy
-```
-
-## Export to Docker
+## Build and Export the packages (inside the studio)
 
 ```
 $ hab studio enter
-$ cd webapp
-$ build
-$ hab pkg export docker learn-chef/webapp
-$ cd ../haproxy
-$ build
-$ hab pkg export docker learn-chef/haproxy
+$ build webapp
+# Grab the built artifact, i.e. "Artifact: /src/results/learn-chef-webapp-0.2.0-20180105200724-x86_64-linux.hart"
+$ hab pkg export docker results/learn-chef-webapp-0.2.0-20180105200724-x86_64-linux.hart
+$ build haproxy
+# Grab the built artifact, i.e. "Artifact: /src/results/learn-chef-haproxy-1.6.11-20180105200724-x86_64-linux.hart"
+$ hab pkg export docker results/learn-chef-haproxy-1.6.11-20180105200724-x86_64-linux.hart
+```
+
+## Build and Export the packages (outside the studio)
+
+```
+$ hab pkg build webapp
+# Grab the built artifact, i.e. "Artifact: results/learn-chef-webapp-0.2.0-20180105200724-x86_64-linux.hart"
+$ hab pkg export docker results/learn-chef-webapp-0.2.0-20180105200724-x86_64-linux.hart
+
+$ hab pkg build haproxy
+# Grab the built artifact, i.e. "Artifact: results/learn-chef-haproxy-1.6.11-20180105200724-x86_64-linux.hart"
+$ hab pkg export docker results/learn-chef-haproxy-1.6.11-20180105200724-x86_64-linux.hart
 ```
 
 ## Run
