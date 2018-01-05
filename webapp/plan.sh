@@ -13,13 +13,13 @@ pkg_exports=(
 )
 
 do_download() {
-  return 0;
+  return 0
 }
 
 do_build() {
-  return 0;
+  return 0
 }
 
 do_install() {
-  cp hello-world ${pkg_prefix}/
+  cp hello-world $pkg_prefix/
 }
