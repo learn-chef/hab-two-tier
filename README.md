@@ -31,7 +31,7 @@ $ hab pkg export docker results/learn-chef-haproxy-1.6.11-20180105200724-x86_64-
 ## Run
 
 ```
-$ docker-compose up -d
+$ HAB_LICENSE=accept-no-persist docker-compose up -d
 $ curl localhost:8000/cgi-bin/hello-world
 $ docker-compose down
 ```
