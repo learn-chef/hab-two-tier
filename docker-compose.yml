@@ -1,14 +1,10 @@
 version: '3'
 services:
   web-1:
-    environment:
-      - HAB_LICENSE
     image: $HAB_ORIGIN/webapp
     environment:
      - HAB_LICENSE=accept-no-persist
   web-2:
-    environment:
-      - HAB_LICENSE
     image: $HAB_ORIGIN/webapp
     environment:
      - HAB_LICENSE=accept-no-persist
@@ -16,8 +12,6 @@ services:
     depends_on:
       - web-1
   load-balancer:
-    environment:
-      - HAB_LICENSE
     image: $HAB_ORIGIN/haproxy
     environment:
      - HAB_LICENSE=accept-no-persist
